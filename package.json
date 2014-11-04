@@ -1,7 +1,7 @@
 {
   "name": "bizzarolout",
   "version": "0.0.1",
-  "main": "server",
+  "main": "example.js",
   "engines": {
     "node": ">=0.10.5"
   },
@@ -12,7 +12,7 @@
   },
   "private": "true",
   "scripts": {
-    "start": "node server.js"
+    "start": "node example.js"
   },
   "description": "Malicious Path Test Cases and Static Code Analysis for Hapi.js Applications",
   "devDependencies": {},
