@@ -1,14 +1,29 @@
 {
-    "name": "ProductsAPI",
-    "version": "0.0.2",
-    "main": "server",
-    "engines": {
-        "node": ">=0.10.5"
-    },
-    "dependencies": {
-        "hapi": "1.8.x",
-        "lout": "0.4.x",
-        "handlebars": "1.0.x"
-    },
-    "private": "true"
+  "name": "bizzarolout",
+  "version": "0.0.1",
+  "main": "server",
+  "engines": {
+    "node": ">=0.10.5"
+  },
+  "dependencies": {
+    "hapi": "1.8.x",
+    "lout": "0.4.x",
+    "handlebars": "1.0.x"
+  },
+  "private": "true",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "description": "Malicious Path Test Cases and Static Code Analysis for Hapi.js Applications",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jlamendo/bizzarolout.git"
+  },
+  "author": "Jon Lamendola",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jlamendo/bizzarolout/issues"
+  },
+  "homepage": "https://github.com/jlamendo/bizzarolout"
 }
