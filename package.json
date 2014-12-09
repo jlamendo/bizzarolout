@@ -6,9 +6,15 @@
     "node": ">=0.10.5"
   },
   "dependencies": {
-    "hapi": "1.8.x",
+    "boom": "^2.6.1",
+    "fast-future": "^1.0.1",
+    "handlebars": "1.0.x",
+    "hapi": "^8.0.0-rc9",
+    "hoek": "^2.10.0",
+    "jason": "^0.3.1",
+    "level-jobs": "^0.4.2",
     "lout": "0.4.x",
-    "handlebars": "1.0.x"
+    "paralleljs": "^0.2.1"
   },
   "private": "true",
   "scripts": {
