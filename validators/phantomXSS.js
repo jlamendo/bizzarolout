@@ -29,23 +29,24 @@ WebKit.prototype.clearPage = function() {
 		_this.xss.push({
 			event: 'confirm',
 			msg: msg
-		})
+		});
 	};
 
 	_this.wp.onPrompt = function(msg) {
 		_this.xss.push({
 			event: 'prompt',
 			msg: msg
-		})
+		});
 	};
 };
 
-webKit.prototype.run = function(data, vector) {
-	if (vector) {
-		this.vector = vector;
+webKit.prototype.run = function(data) {
+	if (data.vector) {
+		this.vector = data.vector;
 	} else {
 		this.vector = null;
 	}
+	data = data.html;
 	_this.clearPage();
 	var _this = this;
 	var html_response = "";
@@ -88,7 +89,9 @@ webKit.prototype.run = function(data, vector) {
 };
 
 var validator = new WebKit();
-var results = validator.run(JSON.parse(atob(system.args[2])));
+var data = JSON.parse(atob(system.args[2]));
+var results = validator.run(data);
 results = JSON.stringify(results);
 results = btoa(results);
-console.log('\n\n\n' + results+ '\n\n\n');
+console.log('\n\n\n' + results + '\n\n\n');
+phantom.exit();

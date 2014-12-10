@@ -9,12 +9,12 @@
     "boom": "^2.6.1",
     "fast-future": "^1.0.1",
     "handlebars": "1.0.x",
-    "hapi": "^8.0.0-rc9",
+    "hapi": "^8.0.0",
     "hoek": "^2.10.0",
     "jason": "^0.3.1",
     "level-jobs": "^0.4.2",
-    "lout": "0.4.x",
-    "paralleljs": "^0.2.1"
+    "paralleljs": "^0.2.1",
+    "update": "^0.1.0"
   },
   "private": "true",
   "scripts": {
