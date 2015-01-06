@@ -1,13 +1,10 @@
 var Hapi = require('hapi');
 var routes = require('./lib/routes');
 
-var charset = require('./vectors/charset.js');
-var config = {};
-var doneTesting = false;
-//var server = new Hapi.Server('0.0.0.0', 8000, config);
-
 var server = new Hapi.Server({connections: { routes: { security: true  } } });
 server.connection({ routes: { cors: true } }).route(routes);
+
+
 var FuzzFactory = require('./lib');
 var fuzzFactory = new FuzzFactory(
 {
