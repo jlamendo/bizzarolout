@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "boom": "^2.6.1",
+    "colors": "^1.0.3",
     "fast-future": "^1.0.1",
     "handlebars": "1.0.x",
     "hapi": "^8.0.0",
@@ -20,7 +21,9 @@
     "start": "node example.js"
   },
   "description": "Malicious Path Test Cases and Static Code Analysis for Hapi.js Applications",
-  "devDependencies": {},
+  "devDependencies": {
+    "joi": "^5.1.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/jlamendo/bizzarolout.git"
