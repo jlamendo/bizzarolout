@@ -5,10 +5,15 @@ var server = new Hapi.Server({connections: { routes: { security: true  } } });
 server.connection({ routes: { cors: true } }).route(routes);
 
 var fuzzerOptions = {
-    credentials: {
-        username: 'default',
-        password: 'letmein'
+    credentials: function (callback) {
+        setTimeout(function () {
+            callback(null, { username: 'default', password: 'letmein' });
+        }, 1000);
     },
+    // credentials: {
+    //     username: 'default',
+    //     password: 'letmein'
+    // },
     maxIterations: 100
 };
 
@@ -34,8 +39,6 @@ server.register([{
         if (err) {
             throw err;
         }
-
-        console.log('Fuzzing completed, found ' + res.length + ' errors');
 
         server.start(function () {
 
