@@ -1,27 +1,24 @@
 {
   "name": "bizzarolout",
   "version": "0.0.1",
-  "main": "example.js",
+  "main": "lib/index.js",
   "engines": {
     "node": ">=0.10.5"
   },
   "dependencies": {
-    "boom": "^2.6.1",
-    "fast-future": "^1.0.1",
-    "handlebars": "1.0.x",
-    "hapi": "^8.0.0",
+    "async": "^0.9.0",
     "hoek": "^2.10.0",
-    "jason": "^0.3.1",
-    "level-jobs": "^0.4.2",
-    "paralleljs": "^0.2.1",
-    "update": "^0.1.0"
+    "joi": "^5.1.0"
   },
-  "private": "true",
   "scripts": {
     "start": "node example.js"
   },
   "description": "Malicious Path Test Cases and Static Code Analysis for Hapi.js Applications",
-  "devDependencies": {},
+  "devDependencies": {
+    "good": "^5.1.1",
+    "good-console": "^4.1.0",
+    "hapi": "^8.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/jlamendo/bizzarolout.git"
