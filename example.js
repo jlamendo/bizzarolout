@@ -4,41 +4,33 @@ var routes = require('./lib/routes');
 var server = new Hapi.Server({connections: { routes: { security: true  } } });
 server.connection({ routes: { cors: true } }).route(routes);
 
+var fuzzerOptions = {
+    credentials: {
+        username: 'default',
+        password: 'letmein'
+    },
+    maxIterations: 100
+};
 
-var FuzzFactory = require('./lib');
-var fuzzFactory = new FuzzFactory(
-{
-    users: [
-        {
-            name: 'Default',
-            credentials: {
-                    username: 'default',
-                    password: 'letmein'
-            },
-            csrfToken: 'abcdef123'
-        },{
-        name: 'Admin',
-            credentials: {
-                    username: 'admin',
-                    password: 'letmein'
-            },
-            csrfToken: 'abcdef123'
-        },{
-        name: 'CSRF_Check',
-            credentials: {
-                    username: null,
-                    password: null,
-            }
-        },
-    ],
-    server: server,
-    maxIterations: 10,
-    cb: function(){
-        server.start();
-},
-});
-fuzzFactory.inject(function(res){
-    if(res['0'].statusCode > 500){
-        console.log(res);
+server.register([{
+    register: require('good'),
+    options: {
+        reporters: [{
+            reporter: require('good-console'),
+            args: [{ log: '*' }]
+        }]
     }
+}, {
+    register: require('./'),
+    options: fuzzerOptions
+}], function (err) {
+
+    if (err) {
+        throw err;
+    }
+
+    server.start(function () {
+
+        console.log('Server started', server.info.uri);
+    });
 });
