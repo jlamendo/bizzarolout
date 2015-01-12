@@ -29,8 +29,17 @@ server.register([{
         throw err;
     }
 
-    server.start(function () {
+    server.plugins.bizzarolout.fuzz(function (err, res) {
 
-        console.log('Server started', server.info.uri);
+        if (err) {
+            throw err;
+        }
+
+        console.log('Fuzzing completed, found ' + res.length + ' errors');
+
+        server.start(function () {
+
+            console.log('Server started', server.info.uri);
+        });
     });
 });
