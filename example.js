@@ -40,8 +40,6 @@ server.register([{
             throw err;
         }
 
-        console.log('Fuzzing completed, found ' + res.length + ' errors');
-
         server.start(function () {
 
             console.log('Server started', server.info.uri);
