@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "lint": "jshint .",
+    "requiresafe": "./node_modules/.bin/requiresafe check"
+
+  },
+  "pre-commit": ["requiresafe"]
+}
